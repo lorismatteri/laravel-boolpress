@@ -33,7 +33,7 @@
                         <i class="fas fa-pen fa-lg fa-fw"></i>
                         Edit
                     </a>  
-                    <form action="{{route('articles.destroy', ['article' => $article->id])}}" method="article">
+                    <form action="{{route('articles.destroy', ['article' => $article->id])}}" method="post">
                     @csrf
                     @method('DELETE')
                         <button type="submit" class="btn btn-danger">

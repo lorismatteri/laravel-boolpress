@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+}); */
+
+Route::get('articles', function (){
+    return response()->json([
+        'success' => true,
+        'data' => App\Article::all()
+    ], 200);
 });
+
