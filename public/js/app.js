@@ -38324,38 +38324,34 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-8" },
-        _vm._l(_vm.articles, function(article) {
-          return _c("div", { key: article.id, staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _c("h2", [_vm._v(_vm._s(article.title))])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
+  return _c("div", { staticClass: "row justify-content-center" }, [
+    _c(
+      "div",
+      { staticClass: "col-md-8" },
+      _vm._l(_vm.articles, function(article) {
+        return _c("div", { key: article.id, staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _c("h2", [_vm._v(_vm._s(article.title))])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _vm._v(
+              "\n                " + _vm._s(article.body) + "\n            "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-footer" }, [
+            _c("span", [
               _vm._v(
-                "\n                    " +
-                  _vm._s(article.body) +
-                  "\n                "
+                "Created at: " +
+                  _vm._s(new Date(article.created_at).toLocaleString("it"))
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-footer" }, [
-              _c("span", [
-                _vm._v(
-                  "Created at: " +
-                    _vm._s(new Date(article.created_at).toLocaleString("it"))
-                )
-              ])
             ])
           ])
-        }),
-        0
-      )
-    ])
+        ])
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = []

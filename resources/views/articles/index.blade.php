@@ -14,6 +14,7 @@
                 <th>Title</th>
                 <th>Body</th>
                 <th>Created</th>
+                <th>Updated</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                 <td>{{$article->title}}</td>
                 <td>{{$article->body}}</td>
                 <td>{{$article->created_at}}</td>
+                <td>{{$article->updated_at}}</td>
                 <td>
                     <a href="{{route('articles.show', ['article' => $article->id])}}" class="btn btn-primary">
                         <i class="fas fa-eye fa-lg fa-fw"></i>
