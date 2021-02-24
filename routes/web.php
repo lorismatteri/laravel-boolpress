@@ -18,3 +18,5 @@ Route::get('about', 'PageController@about')->name('about');
 Route::get('contacts', 'PageController@contacts')->name('contacts');
 
 Route::resource('articles', 'ArticleController');
+
+Route::get('articles_api', 'PageController@articles_api')->name('articles_api');

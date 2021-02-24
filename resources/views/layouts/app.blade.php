@@ -42,6 +42,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('articles.index')}}">Articles</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('articles_api')}}">API</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -49,5 +52,6 @@
         
         @yield('content')
         
+        <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>

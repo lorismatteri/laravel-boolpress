@@ -18,10 +18,12 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 }); */
 
-Route::get('articles', function (){
+/* Route::get('articles', function (){
     return response()->json([
         'success' => true,
         'data' => App\Article::all()
     ], 200);
-});
+}); */
+
+Route::get('articles', 'API\ArticleController@index');
 
