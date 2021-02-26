@@ -34,6 +34,15 @@
         @error('body')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+
+        <div class="form-group">
+            <label for="tags">Tags</label>
+            <select class="form-control" name="tags[]" id="tags" multiple>
+                @foreach ($tags as $tag)
+                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                @endforeach
+            </select>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection
