@@ -75,7 +75,8 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         //
-        return view('articles.edit', compact('article'));
+        $tags = Tag::all();
+        return view('articles.edit', compact('article', 'tags'));
     }
 
     /**
@@ -90,11 +91,12 @@ class ArticleController extends Controller
         //
         $validatedData = $request->validate([
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'tags' => 'exists:tags,id',
         ]);
 
         $article->update($validatedData);
-
+        $article->tags()->sync($request->tags);
         return redirect()->route('articles.index', $article); 
     }
 

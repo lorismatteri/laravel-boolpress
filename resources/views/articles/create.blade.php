@@ -27,6 +27,7 @@
         @error('title')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+
         <div class="form-group">
             <label for="body">Body</label>
             <textarea class="form-control" name="body" id="body" rows="3">{{old('body')}}</textarea>
@@ -43,6 +44,10 @@
                 @endforeach
             </select>
         </div>
+        @error('tag')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection

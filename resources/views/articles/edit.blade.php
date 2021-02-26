@@ -28,6 +28,7 @@
         @error('title')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+
         <div class="form-group">
         <label for="body">Body</label>
         <textarea class="form-control" name="body" id="body" rows="3">{{$article->body}}</textarea>
@@ -35,6 +36,19 @@
         @error('body')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+        
+        <div class="form-group">
+            <label for="tags">Tags</label>
+            <select class="form-control" name="tags[]" id="tags" multiple>
+                @foreach ($tags as $tag)
+                    <option value="{{$tag->id}}" {{$article->tags->contains($tag) ? 'selected' : ""}}>{{$tag->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        @error('tag')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection
