@@ -16,7 +16,7 @@ class AddFoiregnToArticlesTable extends Migration
         Schema::table('articles', function (Blueprint $table) {
             //
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('caregory_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

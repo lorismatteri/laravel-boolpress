@@ -22,4 +22,14 @@ class Article extends Model
     }
 
     //Category::class, 'foreign_key', 'local_key'
+
+    /**
+     * The tags that belong to the Article
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

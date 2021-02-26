@@ -34,15 +34,39 @@
                     <a href="{{route('articles.edit', ['article' => $article->id])}}" class="btn btn-warning">
                         <i class="fas fa-pen fa-lg fa-fw"></i>
                         Edit
-                    </a>  
-                    <form action="{{route('articles.destroy', ['article' => $article->id])}}" method="post">
-                    @csrf
-                    @method('DELETE')
-                        <button type="submit" class="btn btn-danger">
-                            <i class="fas fa-trash fa-lg fa-fw"></i>
-                            Delete
-                        </button>
-                    </form> 
+                    </a>
+                    
+                    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#destroy-{{$article->id}}">
+                        <i class="fas fa-trash fa-lg fa-fw"></i>
+                    </button>
+
+                    <div class="modal fade" id="destroy-{{$article->id}}" tabindex="-1" role="dialog" aria-labelledby="post-destroy-{{$article->id}}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="post-destroy-{{$article->id}}">Delete Article {{$article->title}} </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Sei sicuro?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <form action="{{route('articles.destroy', ['article' => $article->id])}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">
+    
+                                            Delete
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </td>
             </tr>
             @endforeach
