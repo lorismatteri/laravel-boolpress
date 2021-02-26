@@ -1,19 +1,19 @@
 <template>
     
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card" v-for="article in articles" :key="article.id">
-                <div class="card-header"><h2>{{article.title}}</h2></div>
+    
+    <div class="col-md-8">
+        <div class="card" v-for="article in articles" :key="article.id">
+            <div class="card-header"><h2>{{article.title}}</h2></div>
 
-                <div class="card-body">
-                    {{article.body}}
-                </div>
-                <div class="card-footer">
-                    <span>Created at: {{new Date(article.created_at).toLocaleString('it')}}</span>
-                </div>
+            <div class="card-body">
+                {{article.body}}
+            </div>
+            <div class="card-footer">
+                <span>Created at: {{new Date(article.created_at).toLocaleString('it')}}</span>
             </div>
         </div>
     </div>
+    
     
 </template>
 

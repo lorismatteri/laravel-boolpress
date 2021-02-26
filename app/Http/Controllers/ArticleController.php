@@ -29,6 +29,7 @@ class ArticleController extends Controller
     public function create()
     {
         $tags = Tag::all();
+
         return view('articles.create', compact('tags'));
     }
 
